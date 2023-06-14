@@ -4,7 +4,7 @@ import TodoList from "./TodoList";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-const App = () => {
+function App() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
 
@@ -58,15 +58,28 @@ const App = () => {
   };
 
   return (
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-2 fixed-top display-6">
-          <span class="navbar-brand">App <strong>ToDoList</strong></span>
-      </nav>
+    <div className="App">
+      <header className="App-header">
+        <div className="container-fluid">
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-2 fixed-top display-1">
+            <span className="navbar-brand">
+              App <strong>ToDoList</strong>
+            </span>
+          </nav>
+        </div>
+      </header>
 
-      <div class="container-fluid myContInput">
-        <div class="mb-4">
-            <input type="text" value={newTodo} class="form-control" onChange={handleInputChange} onKeyDown={handleKeyDown}/>
-            <small class="form-text text-muted"> Press enter to add a new task ... </small>
+      <div className="container-fluid">
+        <div className="mb-4">
+          <input
+            type="text"
+            value={newTodo}
+            className="form-control inputText"
+            onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
+            placeholder=""
+          />
+          <strong><small>Press enter to add a new task ...</small></strong>
         </div>
 
         <TodoList
@@ -74,10 +87,9 @@ const App = () => {
           onDelete={handleDeleteTodo}
           onUpdate={handleUpdateTodo}
         />
-        </div>
-
+      </div>
     </div>
   );
-};
+}
 
 export default App;

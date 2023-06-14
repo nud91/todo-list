@@ -12,10 +12,10 @@ const TodoItem = ({ todo, onDelete, onUpdate }) => {
   const listItemClasses = "m-1 list-group-item" + (todo.done ? ' done' : ''); // Dodajemy klasę 'done' jeśli todo.done === true
 
   return (
-    <div class="">
-      <li class={listItemClasses}>
-        <button onClick={handleToggle} type="button" class="btn btn-sm btn-success">Done</button>
-        <button onClick={handleDelete} type="button" class="btn btn-sm btn-danger m-2">Delete</button>
+    <div>
+      <li className={listItemClasses}>
+        <button onClick={handleToggle} type="button" className="btn btn-sm btn-success">Done</button>
+        <button onClick={handleDelete} type="button" className="btn btn-sm btn-danger m-2">Delete</button>
         <br></br>
         <span>{todo.title}</span>
       </li>

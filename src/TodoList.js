@@ -3,12 +3,12 @@ import TodoItem from './TodoItem';
 
 const TodoList = ({ todos, onDelete, onUpdate }) => {
 return (
-
-    <div class="">
-        <small class="form-text text-muted">
+    <div>
+        <small>
             The list contains (<strong>{todos.length}</strong>) tasks 
         </small>
-        <ul class="list-group">
+        
+        <ul className="list-group">
         {todos.map((todo) => (
             <TodoItem key={todo.id} todo={todo} onDelete={onDelete} onUpdate={onUpdate} />
         ))}
